@@ -21,7 +21,7 @@ branch_prefixes:
   chore: chore/
   refactor: refactor/
 commit_style: conventional
-ai_attribution: true
+ai_attribution: false                      # never add Co-Authored-By or other AI trailers
 gates:
   type_check: "pnpm typecheck"
   lint: "pnpm lint"
