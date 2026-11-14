@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #141416;
+  --color-sunken: #0e0e10;
+  --color-panel: #1c1c1f;
+  --color-panel-alt: #1a1a1d;
+  --color-track: #18181b;
+  --color-chip: #1f1f23;
+  --color-raised: #202024;
+  --color-hover: #222226;
+  --color-divider: #222225;
+  --color-line: #26262a;
+  --color-control: #26262a;
+  --color-control-hover: #303036;
+  --color-control-alt: #2c2c31;
+  --color-control-alt-hover: #36363c;
+  --color-edge: #2a2a2e;
+  --color-edge-2: #33333a;
+  --color-edge-3: #3a3a40;
+  --color-edge-4: #44444a;
+
+  --color-fg: #ededea;
+  --color-fg-soft: #c9c9c3;
+  --color-fg-muted: #b0b0aa;
+  --color-fg-subtle: #9a9a94;
+  --color-fg-dim: #8a8a84;
+  --color-fg-faint: #76766f;
+  --color-fg-ghost: #66665f;
+  --color-fg-sep: #55554f;
+
+  --color-paper: #f4f3ef;
+  --color-paper-card: #e2e0d9;
+  --color-paper-ink: #1b1b1d;
+  --color-paper-line: #bbbbbb;
+  --color-paper-muted: #aaaaaa;
+
+  --color-mint: oklch(0.78 0.14 160);
+  --color-mint-hi: oklch(0.84 0.14 160);
+  --color-mint-deep: oklch(0.62 0.15 160);
+  --color-orange: oklch(0.72 0.17 50);
+  --color-orange-hi: oklch(0.78 0.17 50);
+  --color-lilac: oklch(0.78 0.13 290);
+  --color-lilac-chip: oklch(0.8 0.13 290);
+  --color-yellow: oklch(0.82 0.15 85);
+  --color-yellow-hi: oklch(0.88 0.15 85);
+  --color-red: oklch(0.7 0.18 30);
+  --color-red-soft: oklch(0.75 0.15 30);
+
+  --animate-fb-up: fb-up 480ms cubic-bezier(0, 0, 0.2, 1) both;
+  --animate-fb-pulse: fb-pulse 1.2s infinite;
+}
+
+@theme inline {
+  --font-sans: var(--font-display), system-ui, sans-serif;
+  --font-mono: var(--font-code), ui-monospace, monospace;
+}
+
+@utility bg-stripe {
+  background: repeating-linear-gradient(135deg, #202024 0 8px, #1a1a1d 8px 16px);
+}
+@utility bg-stripe-lg {
+  background: repeating-linear-gradient(135deg, #202024 0 10px, #1a1a1d 10px 20px);
+}
+@utility bg-stripe-drop {
+  background: repeating-linear-gradient(135deg, #1a1a1d 0 10px, #17171a 10px 20px);
+}
+@utility bg-stripe-frame {
+  background: repeating-linear-gradient(135deg, #232327 0 6px, #1c1c1f 6px 12px);
+}
+
+@keyframes fb-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(220px); }
+}
+@keyframes fb-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fb-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: var(--color-mint);
+  }
+  a:hover {
+    color: var(--color-fg);
+  }
+  button {
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  button:disabled {
+    cursor: default;
+  }
+  input[type="range"] {
+    accent-color: var(--color-mint);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-mint);
+    outline-offset: 2px;
+  }
+}
+
+/*
+ * Reduced motion: the in-app setting sets data-reduce-motion on <html>; the OS preference applies everywhere.
+ * Elements marked data-essential-motion (lesson and challenge demos the user replays on purpose) keep animating.
+ */
+html[data-reduce-motion="true"] *:not([data-essential-motion], [data-essential-motion] *) {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *:not([data-essential-motion], [data-essential-motion] *) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

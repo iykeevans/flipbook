@@ -1,0 +1,17 @@
+{
+  "name": "flipbook",
+  "private": true,
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @flipbook/web dev",
+    "build": "pnpm --filter @flipbook/web build",
+    "start": "pnpm --filter @flipbook/web start",
+    "typecheck": "pnpm --filter @flipbook/web typecheck",
+    "lint": "pnpm --filter @flipbook/web lint",
+    "test": "pnpm --filter @flipbook/web test",
+    "e2e": "pnpm --filter @flipbook/web e2e"
+  }
+}
