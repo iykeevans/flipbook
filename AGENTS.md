@@ -28,10 +28,10 @@ gates:
   test: "pnpm test"
 never_stage: [".env*", "!.env.example"]
 tracker:
-  kind: none
-  issue_prefix: ""
-  shipped_status: ""
-compare_url: ""
+  kind: github                             # iykeevans/flipbook issues and milestones
+  issue_prefix: "#"
+  shipped_status: in-review                # label added once the branch is pushed
+compare_url: "https://github.com/iykeevans/flipbook/compare/{branch}?expand=1"
 memory_dir: docs/ai/memory
 handoff_file: docs/ai/HANDOFF.md
 graphify: false
@@ -88,6 +88,13 @@ Run from the repo root (Node ≥ 20.9, pnpm 12). Each script forwards to `apps/w
 - **Comments**: default to none. Keep one only if deleting it would let someone break something or make a correct line look like a bug: a platform or library quirk, a guard whose purpose isn't obvious, a trap in a tempting rewrite, a contract callers must meet. Delete comments that restate the code, narrate steps, or are stale, commented-out code or section banners, in the lines you change and the code around them. Lint and type directives get a short reason. Don't sweep untouched files in a feature change.
 - Interactive elements are real `<button>`/`<a>`/`<input>` elements, keyboard reachable with visible focus. Honour `prefers-reduced-motion` and the in-app reduced-motion setting.
 - Never label simulated output as real AI analysis.
+
+## Progress Tracking
+
+- `docs/ROADMAP.md` maps every PRD requirement (PRJ, VID, GEN, ANI, LRN, IDE, AC-01 to AC-09, the §18 Definition of Done) to a status: Done, UI (mock), Partial or Not started.
+- Work items are GitHub issues on iykeevans/flipbook, grouped into one milestone per PRD phase and labelled `phase-N`, `area:web|api|ai`, and `status:ui-mock` where a mock UI already exists.
+- A change that moves a requirement updates its row in `docs/ROADMAP.md` (status, where it lives, last-updated date) in the same commit and references its issue (`#N`). Only mark Done when it runs on the real backend and is verified.
+- Codinary briefs list the requirement IDs and issues they cover.
 
 ## Git Conventions
 
