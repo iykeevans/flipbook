@@ -1,0 +1,14 @@
+.claude/settings.local.json
+node_modules/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+.DS_Store
+.claude-flow/
+.swarm/
+*.tsbuildinfo
