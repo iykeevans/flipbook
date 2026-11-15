@@ -4,3 +4,4 @@ Read this index at task startup, then load the notes relevant to the work. Proje
 
 - [Backend is Go](backend-go.md) — the API lives in `apps/api` and is written in Go, not NestJS as the PRD suggests
 - [Frontend-first delivery](frontend-first.md) — the web app ships first against a mock API client; the Go backend replaces it later
+- [Progress tracking](progress-tracking.md) — ROADMAP.md + GitHub milestones/issues per PRD phase; what counts as Done
