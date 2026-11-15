@@ -92,7 +92,7 @@ Run from the repo root (Node ≥ 20.9, pnpm 12). Each script forwards to `apps/w
 ## Progress Tracking
 
 - `docs/ROADMAP.md` maps every PRD requirement (PRJ, VID, GEN, ANI, LRN, IDE, AC-01 to AC-09, the §18 Definition of Done) to a status: Done, UI (mock), Partial or Not started.
-- Work items are GitHub issues on iykeevans/flipbook, grouped into one milestone per PRD phase and labelled `phase-N`, `area:web|api|ai`, and `status:ui-mock` where a mock UI already exists.
+- Work items are GitHub issues on iykeevans/flipbook (board: https://github.com/users/iykeevans/projects/2), grouped into one milestone per PRD phase and labelled `phase-N`, `area:web|api|ai`, and `status:ui-mock` where a mock UI already exists.
 - A change that moves a requirement updates its row in `docs/ROADMAP.md` (status, where it lives, last-updated date) in the same commit and references its issue (`#N`). Only mark Done when it runs on the real backend and is verified.
 - Codinary briefs list the requirement IDs and issues they cover.
 

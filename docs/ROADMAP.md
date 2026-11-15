@@ -1,6 +1,6 @@
 # Roadmap
 
-Where Flipbook stands against the PRD (`docs/reference/prd.pdf`). Update this file in the same commit as any change that moves a requirement. Work items live in [GitHub milestones](https://github.com/iykeevans/flipbook/milestones).
+Where Flipbook stands against the PRD (`docs/reference/prd.pdf`). Update this file in the same commit as any change that moves a requirement. Work items live in [GitHub milestones](https://github.com/iykeevans/flipbook/milestones) and on the [Flipbook MVP board](https://github.com/users/iykeevans/projects/2).
 
 Last updated: 2026-11-15.
 
